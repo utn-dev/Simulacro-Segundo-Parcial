@@ -9,13 +9,13 @@ public class Airport {
     @JsonProperty("_id")
     private String id;
     @JsonProperty("activo")
-    private boolean active;
+    private Boolean active;
     @JsonProperty("balance")
     private String balance;
     @JsonProperty("imagen")
     private String image;
     @JsonProperty("capacidad")
-    private int capacity;
+    private Integer capacity;
     @JsonProperty("nombre")
     private String name;
     @JsonProperty("email")
@@ -24,40 +24,6 @@ public class Airport {
     private String phone;
     @JsonProperty("direccion")
     private String adress;
-    @JsonProperty("acerca")
-    private String about;
-    @JsonProperty("fecha_inicio")
-    private String dateInit;
-    @JsonProperty("latitud")
-    private double latitude;
-    @JsonProperty("longitud")
-    private double longitude;
-    @JsonProperty("etiquetas")
-    private List<String> tags;
-    @JsonProperty("aviones")
-    private List<Plane> planes;
-
-    public Airport() {
-
-    }
-
-    public Airport(String id, List<Plane> planes, List<String> tags, double longitude, double latitude, String dateInit, String about, String adress, String phone, String email, String name, int capacity, boolean active, String balance, String image) {
-        this.id = id;
-        this.planes = planes;
-        this.tags = tags;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.dateInit = dateInit;
-        this.about = about;
-        this.adress = adress;
-        this.phone = phone;
-        this.email = email;
-        this.name = name;
-        this.capacity = capacity;
-        this.active = active;
-        this.balance = balance;
-        this.image = image;
-    }
 
     public String getId() {
         return id;
@@ -67,11 +33,11 @@ public class Airport {
         this.id = id;
     }
 
-    public boolean isActive() {
+    public Boolean getActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 
@@ -91,11 +57,11 @@ public class Airport {
         this.image = image;
     }
 
-    public int getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 
@@ -147,19 +113,19 @@ public class Airport {
         this.dateInit = dateInit;
     }
 
-    public double getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
@@ -178,6 +144,43 @@ public class Airport {
     public void setPlanes(List<Plane> planes) {
         this.planes = planes;
     }
+
+    @JsonProperty("acerca")
+    private String about;
+    @JsonProperty("fecha_inicio")
+    private String dateInit;
+    @JsonProperty("latitud")
+    private Double latitude;
+    @JsonProperty("longitud")
+    private Double longitude;
+    @JsonProperty("etiquetas")
+    private List<String> tags;
+    @JsonProperty("aviones")
+    private List<Plane> planes;
+
+    public Airport() {
+
+    }
+
+    public Airport(String id, List<Plane> planes, List<String> tags, Double longitude, Double latitude, String dateInit, String about, String adress, String phone, String email, String name, Integer capacity, Boolean active, String balance, String image) {
+        this.id = id;
+        this.planes = planes;
+        this.tags = tags;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.dateInit = dateInit;
+        this.about = about;
+        this.adress = adress;
+        this.phone = phone;
+        this.email = email;
+        this.name = name;
+        this.capacity = capacity;
+        this.active = active;
+        this.balance = balance;
+        this.image = image;
+    }
+
+
 
     @Override
     public String toString() {

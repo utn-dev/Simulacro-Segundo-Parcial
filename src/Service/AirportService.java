@@ -31,12 +31,18 @@ public class AirportService {
     // Filtrar Airports por capacidad
     public List<Airport> filterAirportsForCapacity(List<Airport> Airports, Integer minCapacity) throws InsufficientCapacityException {
         List<Airport> AirportsFilters = new ArrayList<>();
+        Boolean flag = false;
+        Integer capacityException = 0;
         for (Airport Airport : Airports) {
             if (Airport.getCapacity() > minCapacity) {
                 AirportsFilters.add(Airport);
             } else {
-                throw new InsufficientCapacityException(Airport.getCapacity());
+                flag = true;
+                capacityException = Airport.getCapacity();
             }
+        }
+        if (flag) {
+            throw new InsufficientCapacityException(capacityException);
         }
         return AirportsFilters;
     }
