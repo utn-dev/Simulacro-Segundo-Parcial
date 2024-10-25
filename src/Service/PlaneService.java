@@ -45,9 +45,9 @@ public class PlaneService {
     }
 
     // Mostrar los tags únicos
-    public void showUniqueTags(Set<Tag> tagsUnicos) {
+    public void showUniqueTags(Set<Tag> tagsUniques) {
         System.out.println("Tags únicos:");
-        for (Tag tag : tagsUnicos) {
+        for (Tag tag : tagsUniques) {
             System.out.println(tag);
         }
     }

@@ -7,16 +7,16 @@ import java.util.Objects;
 public class Plane {
 
     @JsonProperty("id")
-    private int id;
+    private Integer id;
     @JsonProperty("piloto")
     private String pilot;
     @JsonProperty("capacidad_pasajeros")
-    private int passengerCapacity;
+    private Integer passengerCapacity;
 
     public Plane() {
     }
 
-    public Plane(int id, String pilot, int passengerCapacity) {
+    public Plane(Integer id, String pilot, Integer passengerCapacity) {
         this.id = id;
         this.pilot = pilot;
         this.passengerCapacity = passengerCapacity;
@@ -26,7 +26,7 @@ public class Plane {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -42,7 +42,7 @@ public class Plane {
         return passengerCapacity;
     }
 
-    public void setPassengerCapacity(int passengerCapacity) {
+    public void setPassengerCapacity(Integer passengerCapacity) {
         this.passengerCapacity = passengerCapacity;
     }
 

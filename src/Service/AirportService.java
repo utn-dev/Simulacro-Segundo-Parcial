@@ -29,22 +29,22 @@ public class AirportService {
 
 
     // Filtrar Airports por capacidad
-    public List<Airport> filterAirportsForCapacity(List<Airport> Airports, Integer minCapacity) throws InsufficientCapacityException {
-        List<Airport> AirportsFilters = new ArrayList<>();
+    public List<Airport> filterAirportsForCapacity(List<Airport> airports, Integer minCapacity) throws InsufficientCapacityException {
+        List<Airport> airportsFilters = new ArrayList<>();
         Boolean flag = false;
         Integer capacityException = 0;
-        for (Airport Airport : Airports) {
-            if (Airport.getCapacity() > minCapacity) {
-                AirportsFilters.add(Airport);
+        for (Airport airport : airports) {
+            if (airport.getCapacity() > minCapacity) {
+                airportsFilters.add(airport);
             } else {
                 flag = true;
-                capacityException = Airport.getCapacity();
+                capacityException = airport.getCapacity();
             }
         }
         if (flag) {
             throw new InsufficientCapacityException(capacityException);
         }
-        return AirportsFilters;
+        return airportsFilters;
     }
 
 
@@ -53,8 +53,8 @@ public class AirportService {
         mapper.writeValue(new File(filePath), airportsFilter);
     }
 
-    public void ShowAirports(List<Airport> Airports) {
-        for (Airport Airport : Airports) {
+    public void ShowAirports(List<Airport> airports) {
+        for (Airport Airport : airports) {
             System.out.println(Airport);
         }
     }
